@@ -39,3 +39,42 @@ main.container {
 .btn {
     cursor: pointer;
 }
+
+.content-box {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.content-box label {
+    display: block;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.content {
+    position: relative;
+    padding: 0.8em;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    /* overflow-y: auto; */
+}
+.content-box.active .content {
+    height: 10em;
+}
+
+label::before {
+    content: '+';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+
+.content-box.active label::before {
+    content: '-'
+}
